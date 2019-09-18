@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.oneeyedmen.minutest-examples.main" target="1.8" />
+      <module name="com.oneeyedmen.minutest-examples.test" target="1.8" />
+      <module name="com.oneeyedmen.my-new-test-model.main" target="11" />
+      <module name="com.oneeyedmen.my-new-test-model.test" target="11" />
+      <module name="fun-with-kotlin.main" target="11" />
+      <module name="fun-with-kotlin.test" target="11" />
+      <module name="my-new-test-model.com.oneeyedmen.minutest-examples.main" target="1.8" />
+      <module name="my-new-test-model.com.oneeyedmen.minutest-examples.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
