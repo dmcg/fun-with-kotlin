@@ -2,7 +2,7 @@ package funWithKotlin
 
 /*-
 autoscale: true
-footer: © Duncan McGregor 2019
+footer: @duncanmcg © Duncan McGregor 2019
 slidenumbers: true
 
 # Fun with Kotlin
@@ -10,11 +10,9 @@ slidenumbers: true
 
 ![left 100%](https://wearebo.co.uk/static/6110dc3e8cd18bcea942d190915f3bc4/ae0e1/logo.png)
 
-## Duncan McGregor
+Duncan McGregor[^ ]
 
-@duncanmcg
-
-www.oneeyedmen.com
+[^ ]:@duncanmcg, www.oneeyedmen.com
 
 ^
 Introduce me
@@ -49,6 +47,7 @@ Quick poll to gauge audience experience with Java, Kotlin, Scala, other language
 * Lambda functions
 * Inline functions
 * Functions with receiver
+* Implementing functions
 
 ---
 
@@ -58,9 +57,9 @@ A block of code to perform a specific task
 
 May have parameters, may return a result
 
-Something about mathematical functions, purity, referential transparency
+Mathematical functions, purity, referential transparency
 
-Something about methods and message sending
+Methods and message sending
 
 ---
 
