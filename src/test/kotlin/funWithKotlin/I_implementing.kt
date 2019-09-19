@@ -6,6 +6,10 @@ import java.io.Writer
 # Implementing Function Types
 -*/
 
+/*-
+# Implementing Function Types
+-*/
+
 object I1 {
     //`
     fun Person.writeOn(writer: Writer, renderer: (Person) -> String) =
@@ -64,10 +68,9 @@ object I3 {
     fun Person.writeOn(writer: Writer, renderer: (Person) -> String) =
         writer.write(renderer(this))
 
-    fun yetMoreVariations(writer: Writer, person: Person) {
+    fun justOneMoreVariation(writer: Writer, person: Person) {
         val converter2 = Converter(" : ")
         person.writeOn(writer, converter2::convert)
-
     }
 
     class Converter(val separator: String) {

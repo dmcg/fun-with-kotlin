@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test
 
 /*-
 # Infix Functions
+-*/
+
+/*-
+# Infix Functions
 
 ## can be called without punctuation
 -*/

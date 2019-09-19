@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test
 import funWithKotlin.D.D1.Person
 /*-
 # Extension Functions
+-*/
+
+/*-
+# Extension Functions
 
 ## 'extend' a type
 -*/

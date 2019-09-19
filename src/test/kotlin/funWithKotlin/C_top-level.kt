@@ -3,9 +3,11 @@ package funWithKotlin
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
+/*-
+# Top-level Functions
+-*/
 
 /*-
-
 # Functions
 
 ## can be top-level

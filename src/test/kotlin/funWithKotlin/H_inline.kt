@@ -11,6 +11,10 @@ private fun doSomethingWith(person: Person) = person
 
 /*-
 # Inline Functions
+-*/
+
+/*-
+# Inline Functions
 
 ## can be used for control flow
 -*/

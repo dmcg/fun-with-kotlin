@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test
 
 
 /*-
+# Methods
+-*/
 
+/*-
 # Methods
 -*/
 
@@ -27,8 +30,6 @@ object A1 {
 }
 
 /*-
----
-
 # Methods
 
 ## can be a single expression

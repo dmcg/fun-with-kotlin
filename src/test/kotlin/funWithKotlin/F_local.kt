@@ -3,6 +3,10 @@ package funWithKotlin
 
 /*-
 # Local Functions
+-*/
+
+/*-
+# Local Functions
 
 ## avoid scope pollution
 -*/
