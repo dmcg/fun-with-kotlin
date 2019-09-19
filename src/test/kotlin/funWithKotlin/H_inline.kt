@@ -30,14 +30,14 @@ object H1 {
     class IfBlankFirstNameTests {
         @Test fun `returns a copy if first name is blank`() {
             assertEquals(
-                Person("Hugh", "Jamaflip"),
-                Person("", "Jamaflip").ifBlankFirstName { "Hugh" }
+                Person("UNKNOWN", "Person"),
+                Person("", "Person").ifBlankFirstName { "UNKNOWN" }
             )
         }
         @Test fun `returns receiver if first name not blank`() {
             assertEquals(
                 bob,
-                bob.ifBlankFirstName { "Hugh" }
+                bob.ifBlankFirstName { "UNKNOWN" }
             )
         }
     }
@@ -59,12 +59,6 @@ object H2 {
             this.copy(firstName = f())
 
     class IfBlankFirstNameTests {
-        @Test fun `returns a copy if first name is blank`() {
-            assertEquals(
-                Person("Hugh", "Jamaflip"),
-                Person("", "Jamaflip").ifBlankFirstName { "Hugh" }
-            )
-        }
         @Test fun `early return`() {
             Person("", "Jamaflip").ifBlankFirstName {
                 return
@@ -109,14 +103,6 @@ object H3 {
 
 object H4 {
     //`
-    /**
-     * Calls the specified function [block] with `this` value as its argument and returns `this` value.
-     */
-    inline fun <T> T.also(block: (T) -> Unit): T {
-        block(this)
-        return this
-    }
-
     fun printlnDebuggingBefore(person: Person) =
         doSomethingWith(person)
 
@@ -137,7 +123,8 @@ object H4 {
 object H5 {
     //`
     /**
-     * Calls the specified function [block] with `this` value as its argument and returns `this` value.
+     * Calls the specified function [block] with `this` value
+     * as its argument and returns `this` value.
      */
     inline fun <T> T.also(block: (T) -> Unit): T {
         block(this)
@@ -148,7 +135,7 @@ object H5 {
         doSomethingWith(person)
 
     fun printlnDebuggingAfter(person: Person) =
-        doSomethingWith(person).also(::println)
+        doSomethingWith(person).also { println(it) }
 //`
 }
 
@@ -160,6 +147,23 @@ object H5 {
 
 object H6 {
     //`
+    fun Person.toJsonNode(): ObjectNode {
+        val result = objectMapper.createObjectNode()
+        result.put("givenName", firstName)
+        result.put("surname", lastName)
+        return result
+    }
+//`
+}
+
+/*-
+# Inline Functions
+
+## lots of nice built-ins
+-*/
+
+object H7 {
+    //`
     /**
      * Calls the specified function [block] with `this` value as its receiver and returns `this` value.
      */
@@ -168,15 +172,8 @@ object H6 {
         return this
     }
 
-    fun Person.toJsonNode(): ObjectNode {
-        val result = objectMapper.createObjectNode()
-        result.put("givenName", firstName)
-        result.put("surname", lastName)
-        return result
-    }
-
-    fun Person.toJsonNode2() = objectMapper.createObjectNode().apply {
-        put("givenName", firstName)
+    fun Person.toJsonNode() = objectMapper.createObjectNode().apply {
+        this.put("givenName", firstName)
         put("surname", lastName)
     }
 //`

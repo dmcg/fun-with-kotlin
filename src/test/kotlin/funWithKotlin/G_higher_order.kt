@@ -40,6 +40,8 @@ object G1 {
 # Higher-Order Functions
 
 ## taking functions as parameters
+
+^ Note the use of a function reference here. We will see other ways of implementing functions later
 -*/
 
 object G2 {

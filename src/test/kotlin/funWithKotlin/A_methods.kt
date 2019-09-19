@@ -10,20 +10,20 @@ import org.junit.jupiter.api.Test
 
 /*-
 # Methods
--*/
 
+## are public and final by default
+-*/
 object A1 {
     //`
-    data class Person(val firstName: String, val lastName: String) {
-        fun fullName(): String {
+    open class Person(val firstName: String, val lastName: String) {
+        open fun fullName(): String {
             return firstName + " " + lastName
         }
     }
 
-    class PersonTests {
-        val bob = Person("Bob", "TheBuilder")
-        @Test fun names() {
-            assertEquals("Bob TheBuilder", bob.fullName())
+    class Employee(firstName: String, lastName: String) : Person(firstName, lastName) {
+        override fun fullName(): String {
+            return lastName + " " + firstName
         }
     }
 //`
@@ -33,21 +33,24 @@ object A1 {
 # Methods
 
 ## can be a single expression
+
+^ Aiming to make every method a single expression is a good way to improve your Kotlin
 -*/
 
-object A2 {
-    val bob = Person("Bob", "TheBuilder")
-
+object A2a {
     //`
-    data class Person(val firstName: String, val lastName: String) {
+    class Person(val firstName: String, val lastName: String) {
+        fun fullName(): String {
+            return firstName + " " + lastName
+        }
+    }
+//`
+}
+object A2b {
+    //`
+    class Person(val firstName: String, val lastName: String) {
         fun fullName(): String = firstName + " " + lastName
     }
-
-    class PersonTests {
-        @Test fun names() {
-            assertEquals("Bob TheBuilder", bob.fullName())
-        }
-    }
 //`
 }
 
@@ -56,22 +59,20 @@ object A2 {
 
 # Methods
 
-## can have an explicit return type
+## can have an implicit return type
 -*/
-
-object A3 {
-    val bob = Person("Bob", "TheBuilder")
-
+object A3a {
     //`
-    data class Person(val firstName: String, val lastName: String) {
+    class Person(val firstName: String, val lastName: String) {
+        fun fullName(): String = firstName + " " + lastName
+    }
+//`
+}
+object A3b {
+    //`
+    class Person(val firstName: String, val lastName: String) {
         fun fullName() = firstName + " " + lastName
     }
-
-    class PersonTests {
-        @Test fun names() {
-            assertEquals("Bob TheBuilder", bob.fullName())
-        }
-    }
 //`
 }
 
@@ -80,14 +81,16 @@ object A3 {
 
 # Methods
 
-## can have named parameters, with defaults
+## can be called with named arguments, or default parameters
+
+^ Then we can reorder arguments.
 -*/
 
 object A4 {
     val bob = Person("Bob", "TheBuilder")
 
     //`
-    data class Person(val firstName: String, val lastName: String) {
+    class Person(val firstName: String, val lastName: String) {
         fun fullName(separator: String = " ") =
             firstName + separator + lastName
     }
@@ -95,7 +98,7 @@ object A4 {
     class PersonTests {
         @Test fun names() {
             assertEquals("Bob : TheBuilder", bob.fullName(" : "))
-            assertEquals("Bob-TheBuilder", bob.fullName(separator = "-"))
+            assertEquals("Bob - TheBuilder", bob.fullName(separator = " - "))
             assertEquals("Bob TheBuilder", bob.fullName())
         }
     }
@@ -106,6 +109,12 @@ object A4 {
 ---
 
 # Static Methods
+
+## are declared on a companion object
+
+^Companion objects can implement interfaces, and be passed around, making them more
+use than Java statics
+You do have to add @JvmStatic annotations to interop with Java
 -*/
 
 object A5 {
@@ -113,7 +122,7 @@ object A5 {
     data class Person(val firstName: String, val lastName: String) {
 
         companion object {
-            fun parse(fullName: String): Person {
+            @JvmStatic fun parse(fullName: String): Person {
                 val bits = fullName.split(" ")
                 return Person(firstName = bits[0], lastName = bits[1])
             }

@@ -8,9 +8,11 @@ import org.junit.jupiter.api.Test
 -*/
 
 /*-
-# Functions
+# Top-level Functions
 
-## can be top-level
+## have file scope
+
+^ but the compiler has to put them somewhere, so it creates a Java class and adds them as static methods.
 -*/
 
 object C1 {
@@ -33,7 +35,7 @@ object C1 {
 
 /*-
 
-# Functions
+# Top-level Functions
 
 ## have the conveniences of methods
 -*/

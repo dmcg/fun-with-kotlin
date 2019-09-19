@@ -4,6 +4,8 @@ package funWithKotlin
 autoscale: true
 footer: @duncanmcg © Duncan McGregor 2019
 slidenumbers: true
+slide-dividers: #
+theme: Courier
 
 # Fun with Kotlin
 
@@ -19,13 +21,25 @@ Introduce me
 I'm really just the warmup act for Dmitry
 Actually I sent him a message to ask him if I could go second, on the grounds that after you've seen his excellent talk you won't remember mine
 and also his talk is on Kotlin Native, so what is it doing in the first JVM in London meeting?
-He sent me back this note, it says "You can't"
+So I asked if he would let me go first, and he sent me back this note, it says "You can't"
 Explain that the Kotlin keyword defining an executable block of code is fun
-Quick poll to gauge audience experience with Java, Kotlin, Scala, other languages
+Quick poll - experience with Java, Kotlin, Scala, other languages
+I'll try to tailor the talk to the level of experience
+
+
+# What is a function?
+[.build-lists: true]
+
+^ Ask the audience
+
+* A block of code to perform a specific task
+* Takes zero or more parameters, returns one result
+* Mathematical functions, purity, referential transparency
+* Methods, message sending, polymorphism
 
 ---
 
-# What Fun?
+# What fun?
 
 * Methods
 * Static methods
@@ -43,24 +57,15 @@ Quick poll to gauge audience experience with Java, Kotlin, Scala, other language
 * Higher-order functions
 * Function types
 * Function values
-* Function objects
 * Lambda functions
 * Inline functions
 * Functions with receiver
+* Function objects
 * Implementing functions
 
----
-
-# What is a function?
-
-A block of code to perform a specific task
-
-May have parameters, may return a result
-
-Mathematical functions, purity, referential transparency
-
-Methods and message sending
+^ Please do ask questions as we go, as from here on in it's an unmitigated wall of code
 
 ---
+
 
 -*/
