@@ -43,7 +43,7 @@ object I1a1 {
 /*-
 # Implementing Function Types
 
-## with function reference
+## with function and method references
 -*/
 
 object I1a {

@@ -19,10 +19,6 @@ Duncan McGregor[^ ]
 ^
 Introduce me
 I'm really just the warmup act for Dmitry
-Actually I sent him a message to ask him if I could go second, on the grounds that after you've seen his excellent talk you won't remember mine
-and also his talk is on Kotlin Native, so what is it doing in the first JVM in London meeting?
-So I asked if he would let me go first, and he sent me back this note, it says "You can't"
-Explain that the Kotlin keyword defining an executable block of code is fun
 Quick poll - experience with Java, Kotlin, Scala, other languages
 I'll try to tailor the talk to the level of experience
 
